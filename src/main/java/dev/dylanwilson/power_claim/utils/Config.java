@@ -1,4 +1,4 @@
-package dev.dylanwilson.power_claim;
+package dev.dylanwilson.power_claim.utils;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;

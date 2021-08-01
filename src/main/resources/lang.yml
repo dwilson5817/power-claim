@@ -1,0 +1,9 @@
+## PowerClaim (v1.0.0)
+# Plugin language file.  Language used by the plugin is stored within this file.  You can update it to modify messages
+# or to translate the plugin into additional languages.
+
+# Startup: printed to console on plugin startup
+plugin_startup: 'PowerClaim is starting!'
+
+# Shutdown: printed to console on plugin shutdown
+plugin_shutdown: 'PowerClaim is shutting down!'
