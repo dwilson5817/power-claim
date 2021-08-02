@@ -7,3 +7,9 @@ plugin_startup: 'PowerClaim is starting!'
 
 # Shutdown: printed to console on plugin shutdown
 plugin_shutdown: 'PowerClaim is shutting down!'
+
+# Claimed: sent to a player when a chunk is claimed
+chunk_claimed: 'Chunk claimed successfully!'
+
+# Unclaimed: sent to a player when a chunk is unclaimed
+chunk_unclaimed: 'Chunk unclaimed successfully!'
