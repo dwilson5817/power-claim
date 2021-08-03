@@ -1,8 +1,11 @@
 package dev.dylanwilson.power_claim;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import dev.dylanwilson.power_claim.commands.Claim;
 import dev.dylanwilson.power_claim.commands.Unclaim;
 import dev.dylanwilson.power_claim.utils.Config;
+import dev.dylanwilson.power_claim.utils.DataSource;
 import dev.dylanwilson.power_claim.utils.Lang;
 import dev.dylanwilson.power_claim.utils.Message;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -10,11 +13,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
     private Config config;
     private Lang lang;
+    private DataSource dataSource;
 
     @Override
     public void onEnable() {
         this.config = new Config(this);
         this.lang = new Lang(this);
+        this.dataSource = new DataSource(this);
 
         this.getCommand("claim").setExecutor(new Claim(this));
         this.getCommand("unclaim").setExecutor(new Unclaim(this));
@@ -25,6 +30,10 @@ public class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info(lang.getMessage(Message.PLUGIN_SHUTDOWN));
+    }
+
+    public Config getConfiguration() {
+        return config;
     }
 
     public Lang getLang() {
