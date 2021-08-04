@@ -1,8 +1,9 @@
-package dev.dylanwilson.power_claim.utils;
+package dev.dylanwilson.power_claim.sql;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import dev.dylanwilson.power_claim.Main;
+import dev.dylanwilson.power_claim.utils.ConfigOption;
 
 import java.sql.Connection;
 import java.sql.SQLException;

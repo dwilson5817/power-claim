@@ -8,8 +8,8 @@ variables:
 before_script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
 
-jar:
-  stage: jar
+build:
+  stage: build
   tags:
     - java
   script: ./gradlew --build-cache shadowJar
