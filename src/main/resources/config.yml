@@ -1,0 +1,35 @@
+## PowerClaim (v1.0.0)
+
+## MySQL
+# Define the MySQL database connection details
+mysql:
+
+  # MySQL hostname
+  # Hostname of the MySQL server, don't include the port here
+  host: localhost
+
+  # MySQL port
+  # Port of the MySQL server
+  port: 3306
+
+  # MySQL user
+  # Username used to connect the MySQL database
+  user: powerclaim
+
+  # MySQL password
+  # Password to authenticate the user
+  pass: hunter2
+
+  # MySQL database
+  # Database to use for saving PowerClaim data
+  database: powerclaim
+
+  # Table prefix
+  # Prepended before all tables, set to false to disable
+  prefix: pc_
+
+## Config version
+# Used to keep track of changes to the config file.
+#
+# IMPORTANT: Don't touch this unless you know what you are doing.
+config_version: 1

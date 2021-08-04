@@ -1,0 +1,27 @@
+## PowerClaim (v1.0.0)
+# Plugin language file.  Language used by the plugin is stored within this file.  You can update it to modify messages
+# or to translate the plugin into additional languages.
+
+# Startup: printed to console on plugin startup
+plugin_startup: 'PowerClaim is starting!'
+
+# Shutdown: printed to console on plugin shutdown
+plugin_shutdown: 'PowerClaim is shutting down!'
+
+# Non-player: Sent when a non-player (e.g. console) runs a player-only command
+not_a_player: 'You need to be a player to run this command!'
+
+# Claimed: sent to a player when a chunk is claimed
+chunk_claimed: 'Chunk claimed successfully!'
+
+# Already claimed: player attempted to claim a chunk already owned
+chunk_already_claimed: 'This chunk is already claimed!'
+
+# Unclaimed: sent to a player when a chunk is unclaimed
+chunk_unclaimed: 'Chunk unclaimed successfully!'
+
+# Not claimed: sent when a player attempts to unclaim an unowned chunk
+chunk_not_claimed: 'This chunk is not owned so can not be unclaimed!'
+
+# Plugin error: sent when an unexpected plugin error occurs, check your logs for more info
+unexpected_error: 'An unexpected error occurred!  Ask the admin to check the server logs'

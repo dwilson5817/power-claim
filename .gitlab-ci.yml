@@ -12,7 +12,7 @@ build:
   stage: build
   tags:
     - java
-  script: ./gradlew --build-cache assemble
+  script: ./gradlew --build-cache shadowJar
   only:
     - main
   cache:

@@ -2,3 +2,12 @@ api-version: 1.16
 main: dev.dylanwilson.power_claim.Main
 name: PowerClaim
 version: 1.0
+commands:
+  claim:
+    description: Claim the chunk you are standing in
+    usage: /claim
+    permission: powerclaim.claim
+  unclaim:
+    description: Unclaim the chunk you are standing in
+    usage: /unclaim
+    permission: powerclaim.unclaim
