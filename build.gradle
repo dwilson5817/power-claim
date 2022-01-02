@@ -1,15 +1,14 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'kr.entree.spigradle' version '2.3.3'
+    id 'maven-publish'
     id 'java'
 }
 
-group 'dev.dylanwilson.plugins'
-version '1.0-SNAPSHOT'
+apply from: 'version.gradle'
 
 repositories {
     mavenCentral()
-
-    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
 }
 
@@ -24,6 +23,50 @@ dependencies {
 
     // https://mvnrepository.com/artifact/commons-io/commons-io
     implementation 'commons-io:commons-io:2.6'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url "${publishUrl}/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = 'Job-Token'
+                value = System.getenv("CI_JOB_TOKEN")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}
+
+spigot {
+    commands {
+        claim {
+            description = 'Claim the chunk you are standing in'
+            permission = 'powerclaim.claim'
+            usage = '/<command>'
+        }
+        unclaim {
+            description = 'Unclaim the chunk you are standing in'
+            permission = 'powerclaim.unclaim'
+            usage = '/<command>'
+        }
+    }
+    permissions {
+        'powerclaim.claim' {
+            description = 'Allows claim command'
+        }
+        'powerclaim.unclaim' {
+            description = 'Allows unclaim command'
+        }
+    }
 }
 
 test {
