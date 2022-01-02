@@ -1,0 +1,12 @@
+def baseVersion = version
+
+def tag = System.getenv("CI_COMMIT_TAG")
+def branch = System.getenv("CI_COMMIT_REF_NAME")
+def suffix = tag ? 'RELEASE' : 'SNAPSHOT'
+
+group 'dev.dylanwilson.plugins'
+version "$baseVersion.$branch-$suffix"
+
+// Don't include the branch name when running outside of GitLab or on the main branch.
+if (!branch || branch == 'main')
+    version "$baseVersion-$suffix"
